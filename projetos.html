@@ -50,6 +50,8 @@ nav a {
 nav a:hover {
   color: #c7ffd8;
 }
+
+/* ==== SEÇÃO PRINCIPAL ==== */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -57,12 +59,14 @@ section {
 h2 {
   color: #0b1d51;
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
+
 .card {
   background: white;
   border-radius: 12px;
@@ -78,6 +82,38 @@ h2 {
   border-radius: 10px;
   margin-bottom: 15px;
 }
+button {
+  background: #1f7a3d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #0b1d51;
+}
+
+/* ==== DETALHES DO PROJETO ==== */
+.projeto-detalhes {
+  display: none;
+  background: #e9f6ec;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  animation: aparecer 0.5s ease;
+}
+.projeto-detalhes img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+@keyframes aparecer {
+  from {opacity: 0; transform: scale(0.98);}
+  to {opacity: 1; transform: scale(1);}
+}
+
 footer {
   background: #0b1d51;
   color: white;
@@ -104,32 +140,59 @@ footer {
 
 <section>
   <h2>Projetos Educacionais</h2>
-  <p>Conheça alguns dos projetos desenvolvidos por nossos alunos e professores, com foco em inovação, cidadania e aprendizado prático.</p>
+  <p>Veja nossos projetos que incentivam a criatividade, o aprendizado e a cidadania.</p>
 
   <div class="cards">
+
+    <!-- Projeto 1 -->
     <div class="card">
       <img src="https://via.placeholder.com/400x200" alt="Projeto Sustentável">
       <h3>Projeto Sustentável</h3>
-      <p>Iniciativa voltada para reciclagem e conscientização ambiental dentro da escola.</p>
+      <p>Iniciativa de reciclagem e cuidado com o meio ambiente.</p>
+      <button onclick="mostrarDetalhes(1)">Ver mais</button>
+      <div class="projeto-detalhes" id="detalhe1">
+        <p>O Projeto Sustentável foi criado pelos alunos do 8º ano para promover ações de reciclagem e redução de lixo na escola. Além disso, foram plantadas árvores e criadas oficinas sobre reutilização de materiais.</p>
+        <img src="https://via.placeholder.com/600x350" alt="Foto do projeto sustentável">
+      </div>
     </div>
 
+    <!-- Projeto 2 -->
     <div class="card">
       <img src="https://via.placeholder.com/400x200" alt="Feira de Ciências">
       <h3>Feira de Ciências</h3>
-      <p>Alunos apresentam experimentos e projetos científicos criativos realizados ao longo do ano.</p>
+      <p>Evento anual com experimentos e apresentações criativas dos alunos.</p>
+      <button onclick="mostrarDetalhes(2)">Ver mais</button>
+      <div class="projeto-detalhes" id="detalhe2">
+        <p>Durante a Feira de Ciências, os alunos apresentaram experimentos de física, química e biologia, explorando temas como energia limpa, reciclagem e robótica educacional.</p>
+        <img src="https://via.placeholder.com/600x350" alt="Feira de Ciências">
+      </div>
     </div>
 
+    <!-- Projeto 3 -->
     <div class="card">
       <img src="https://via.placeholder.com/400x200" alt="Leitura em Ação">
       <h3>Leitura em Ação</h3>
-      <p>Projeto que incentiva o hábito da leitura e o desenvolvimento da escrita criativa.</p>
+      <p>Projeto de incentivo à leitura e escrita criativa.</p>
+      <button onclick="mostrarDetalhes(3)">Ver mais</button>
+      <div class="projeto-detalhes" id="detalhe3">
+        <p>O projeto “Leitura em Ação” busca desenvolver o gosto pela leitura com rodas de leitura, concursos literários e produção de livros pelos próprios alunos.</p>
+        <img src="https://via.placeholder.com/600x350" alt="Leitura em Ação">
+      </div>
     </div>
+
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
 </footer>
+
+<script>
+function mostrarDetalhes(id) {
+  const detalhe = document.getElementById('detalhe' + id);
+  detalhe.style.display = detalhe.style.display === 'block' ? 'none' : 'block';
+}
+</script>
 
 </body>
 </html>
