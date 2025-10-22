@@ -77,7 +77,7 @@
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background: #fff;
+    cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
@@ -108,26 +108,38 @@
     color: #444;
   }
 
-  /* ===== FOOTER ===== */
+  /* ===== LIGHTBOX ===== */
+  #lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  #lightbox span {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
   footer {
-    background: #003366;
+    background: #0b1d51;
     color: white;
     text-align: center;
     padding: 15px;
-  }
-
-  button {
-    background: #00b894;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background: #0077b6;
   }
 </style>
 </head>
@@ -135,7 +147,7 @@
 
 <header>
   <div class="header-left">
-    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola Estadual Mário Pereira Pinto">
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
   </div>
 
   <h1>Galeria</h1>
@@ -143,39 +155,39 @@
   <nav>
     <a href="index.html">Sobre</a>
     <a href="projetos.html">Projetos</a>
+    <a href="noticias.html">Notícias</a>
     <a href="galeria.html">Galeria</a>
     <a href="contato.html">Contato</a>
-    <a href="notícias.html">notícias</a>
   </nav>
 </header>
 
 <section class="gallery">
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/400x250" alt="Projeto 1">
+  <div class="gallery-item" onclick="abrirLightbox(this)">
+    <img src="https://via.placeholder.com/400x250" alt="Feira de Ciências">
     <div class="gallery-info">
       <h3>Feira de Ciências</h3>
-      <p>Alunos apresentando experimentos e projetos inovadores.</p>
+      <p>Alunos apresentando experimentos inovadores.</p>
     </div>
   </div>
 
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/400x250" alt="Projeto 2">
+  <div class="gallery-item" onclick="abrirLightbox(this)">
+    <img src="https://via.placeholder.com/400x250" alt="Dia da Família">
     <div class="gallery-info">
       <h3>Dia da Família</h3>
-      <p>Um dia especial de integração entre pais, alunos e professores.</p>
+      <p>Integração entre pais, alunos e professores.</p>
     </div>
   </div>
 
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/400x250" alt="Projeto 3">
+  <div class="gallery-item" onclick="abrirLightbox(this)">
+    <img src="https://via.placeholder.com/400x250" alt="Mostra Cultural">
     <div class="gallery-info">
       <h3>Mostra Cultural</h3>
-      <p>Apresentações artísticas e exposições de trabalhos estudantis.</p>
+      <p>Apresentações artísticas e exposições de trabalhos.</p>
     </div>
   </div>
 
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/400x250" alt="Projeto 4">
+  <div class="gallery-item" onclick="abrirLightbox(this)">
+    <img src="https://via.placeholder.com/400x250" alt="Projeto Sustentabilidade">
     <div class="gallery-info">
       <h3>Projeto Sustentabilidade</h3>
       <p>Atividades sobre reciclagem e preservação ambiental.</p>
@@ -183,9 +195,27 @@
   </div>
 </section>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="fecharLightbox()">
+  <span>&times;</span>
+  <img src="" alt="Visualização da imagem">
+</div>
+
 <footer>
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
 </footer>
+
+<script>
+function abrirLightbox(item) {
+  const img = item.querySelector('img').src;
+  document.querySelector('#lightbox img').src = img;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+
+function fecharLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 
 </body>
 </html>
