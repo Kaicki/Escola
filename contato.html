@@ -8,10 +8,10 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f7fbff;
+  background: #f5f8fa;
 }
 header {
-  background: linear-gradient(90deg, #0077b6, #00b894);
+  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
   color: white;
   padding: 20px;
   text-align: center;
@@ -22,6 +22,9 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
+nav a:hover {
+  text-decoration: underline;
+}
 section {
   padding: 50px 20px;
   text-align: center;
@@ -29,9 +32,10 @@ section {
 form {
   max-width: 400px;
   margin: auto;
-  background: #e3f2fd;
+  background: #e9f5ee;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 input, textarea {
   width: 100%;
@@ -39,21 +43,23 @@ input, textarea {
   margin: 10px 0;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 15px;
 }
 button {
-  background: #0077b6;
+  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 button:hover {
-  background: #00b894;
+  background: linear-gradient(90deg, #0b1d51, #1f7a3d);
 }
 footer {
-  background: #003366;
+  background: #0b1d51;
   color: white;
   text-align: center;
   padding: 15px;
@@ -74,11 +80,11 @@ footer {
 
 <section>
   <h2>Fale Conosco</h2>
-  <form onsubmit="enviarMensagem(event)">
-    <input type="text" placeholder="Seu nome" required>
-    <input type="email" placeholder="Seu e-mail" required>
-    <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
-    <button type="submit">Enviar</button>
+  <form id="formContato" onsubmit="enviarMensagem(event)">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="email" id="email" placeholder="Seu e-mail" required>
+    <textarea id="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
+    <button type="submit">Enviar via WhatsApp</button>
   </form>
 </section>
 
@@ -89,7 +95,18 @@ footer {
 <script>
 function enviarMensagem(e) {
   e.preventDefault();
-  alert("Mensagem enviada com sucesso!");
+
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const mensagem = document.getElementById("mensagem").value;
+
+  // 🔽 Coloque aqui o número do WhatsApp da escola
+  const numero = "5581999999999"; // exemplo: 55 + DDD + número
+
+  const texto = `Olá, sou ${nome} (%20${email})%0A%0A${mensagem}`;
+  const url = `https://wa.me/${numero}?text=${texto}`;
+
+  window.open(url, "_blank");
 }
 </script>
 </body>
