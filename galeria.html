@@ -9,37 +9,75 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #f0faff;
+  color: #222;
 }
+
+/* ===== HEADER ===== */
 header {
   background: linear-gradient(90deg, #1f7a3d, #0b1d51);
-  color: white;
-  padding: 20px;
-  text-align: center;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 nav a {
-  color: white;
-  margin: 0 15px;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
+
 nav a:hover {
-  text-decoration: underline;
+  color: #c7ffd8;
 }
+
+/* ===== GALERIA ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 40px;
 }
+
 .gallery img {
   width: 100%;
   border-radius: 10px;
   transition: transform 0.3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
 .gallery img:hover {
   transform: scale(1.05);
 }
+
+/* ===== FOOTER ===== */
 footer {
   background: #0b1d51;
   color: white;
@@ -49,8 +87,12 @@ footer {
 </style>
 </head>
 <body>
+
 <header>
-  <h1>Galeria</h1>
+  <div class="header-left">
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+  </div>
+  <h1>Escola Estadual Mário Pereira Pinto</h1>
   <nav>
     <a href="index.html">Início</a>
     <a href="sobre.html">Sobre</a>
@@ -59,14 +101,19 @@ footer {
   </nav>
 </header>
 
-<section class="gallery">
-  <img src="https://i.pinimg.com/236x/58/83/71/5883719edede80221436679dd1438d7d.jpg" alt="Evento 1">
-  <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSE9U8Xh-6zduhSAWAx1L2vdWfI0WlwfVj92i0nYG9JP1t8VpglPvAsEe0z1tfa2JwC87evxDaH7KVdsI8p0yqWTTm8icBBffZTdP5ZjzkcIg" alt="Evento 2">
-  <img src="https://media.istockphoto.com/id/517188688/pt/foto/paisagem-de-montanha.jpg?s=612x612&w=0&k=20&c=uFGUrUT6gA8FrTWhE10YYzngWPlDLssKxJiDs1Qw2Qs=" alt="Evento 3">
+<section>
+  <h2>Galeria de Momentos</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400x250" alt="Evento 1">
+    <img src="https://via.placeholder.com/400x250" alt="Evento 2">
+    <img src="https://via.placeholder.com/400x250" alt="Evento 3">
+    <img src="https://via.placeholder.com/400x250" alt="Evento 4">
+  </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
 </footer>
+
 </body>
 </html>
