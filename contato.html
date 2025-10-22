@@ -8,56 +8,88 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f5f8fa;
+  background: #f4f9ff;
+  color: #222;
 }
+
 header {
   background: linear-gradient(90deg, #1f7a3d, #0b1d51);
   color: white;
-  padding: 20px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header img {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+header h1 {
+  flex: 1;
   text-align: center;
+  font-size: 1.4em;
+  margin: 0;
+}
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 nav a {
-  color: white;
-  margin: 0 15px;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-form {
-  max-width: 400px;
-  margin: auto;
-  background: #e9f5ee;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-button {
-  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
-button:hover {
-  background: linear-gradient(90deg, #0b1d51, #1f7a3d);
+nav a:hover {
+  color: #c7ffd8;
 }
+
+/* ===== FORMULÁRIO ===== */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+form {
+  max-width: 450px;
+  margin: auto;
+  background: #e9f6ec;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  background: #1f7a3d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+button:hover {
+  background: #0b1d51;
+}
+
 footer {
   background: #0b1d51;
   color: white;
@@ -68,11 +100,16 @@ footer {
 </style>
 </head>
 <body>
+
 <header>
+  <div class="header-left">
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+  </div>
   <h1>Contato</h1>
   <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
+    <a href="index.html">Sobre</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="noticias.html">Notícias</a>
     <a href="galeria.html">Galeria</a>
     <a href="contato.html">Contato</a>
   </nav>
@@ -80,8 +117,11 @@ footer {
 
 <section>
   <h2>Fale Conosco</h2>
-  <form id="formContato" onsubmit="enviarMensagem(event)">
-    <input type="text" id="nome" placeholder="Seu nome" required>
+  <p>Por favor, preencha o formulário abaixo com o **nome do aluno** e **nome dos pais ou responsáveis**.</p>
+
+  <form onsubmit="enviarMensagem(event)">
+    <input type="text" id="nomeAluno" placeholder="Nome do aluno" required>
+    <input type="text" id="nomePais" placeholder="Nome dos pais/responsáveis" required>
     <input type="email" id="email" placeholder="Seu e-mail" required>
     <textarea id="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
     <button type="submit">Enviar via WhatsApp</button>
@@ -96,18 +136,22 @@ footer {
 function enviarMensagem(e) {
   e.preventDefault();
 
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
-  const mensagem = document.getElementById("mensagem").value;
+  // Captura os valores do formulário
+  const aluno = document.getElementById('nomeAluno').value;
+  const pais = document.getElementById('nomePais').value;
+  const email = document.getElementById('email').value;
+  const msg = document.getElementById('mensagem').value;
 
-  // 🔽 Coloque aqui o número do WhatsApp da escola
-  const numero = "5581999999999"; // exemplo: 55 + DDD + número
+  // Mensagem formatada
+  const mensagem = `Olá, meu nome é ${pais}. Estou entrando em contato sobre o aluno(a) ${aluno}. Mensagem: ${msg} | E-mail para contato: ${email}`;
 
-  const texto = `Olá, sou ${nome} (%20${email})%0A%0A${mensagem}`;
-  const url = `https://wa.me/${numero}?text=${texto}`;
+  // Número de WhatsApp da escola (exemplo: 55 + código + número)
+  const numeroEscola = "5511999999999";
 
-  window.open(url, "_blank");
+  // Redireciona para WhatsApp
+  window.open(`https://wa.me/${numeroEscola}?text=${encodeURIComponent(mensagem)}`, '_blank');
 }
 </script>
+
 </body>
 </html>
