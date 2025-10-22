@@ -3,148 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato - Escola Estadual Mário Pereira Pinto</title>
+<title>Galeria - Escola Estadual Mário Pereira Pinto</title>
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f7fbff;
-}
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f9ff;
+    color: #222;
+  }
 
-/* ===== HEADER ===== */
-header {
-  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(90deg, #1f7a3d, #0b1d51);
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-header img {
-  width: 80px;
-  height: auto;
-  border-radius: 50%;
-}
+  header img {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
 
-header h1 {
-  flex: 1;
-  text-align: center;
-  font-size: 1.4em;
-  margin: 0;
-}
+  header img:hover {
+    transform: scale(1.05);
+  }
 
-nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+  header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0;
+  }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 
-nav a:hover {
-  color: #c7ffd8;
-}
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-/* ===== FORM ===== */
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-form {
-  max-width: 400px;
-  margin: auto;
-  background: #e3f2fd;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-button {
-  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-button:hover {
-  background: linear-gradient(90deg, #0b1d51, #1f7a3d);
-}
+  nav a:hover {
+    color: #c7ffd8;
+  }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #0b1d51;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
+  /* ===== GALERIA ===== */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-info {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .gallery-info h3 {
+    margin: 10px 0 5px;
+    color: #0b1d51;
+  }
+
+  .gallery-info p {
+    font-size: 0.9em;
+    color: #444;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  button {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #0077b6;
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-left">
-    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola Estadual Mário Pereira Pinto">
   </div>
+
   <h1>Escola Estadual Mário Pereira Pinto</h1>
+
   <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
+    <a href="index.html">Sobre</a>
+    <a href="projetos.html">Projetos</a>
     <a href="galeria.html">Galeria</a>
     <a href="contato.html">Contato</a>
   </nav>
 </header>
 
-<section>
-  <h2>Fale Conosco</h2>
-  <form onsubmit="enviarMensagem(event)">
-    <input type="text" id="nome" placeholder="Seu nome" required>
-    <input type="email" id="email" placeholder="Seu e-mail" required>
-    <textarea id="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
-    <button type="submit">Enviar via WhatsApp</button>
-  </form>
+<section class="gallery">
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/400x250" alt="Projeto 1">
+    <div class="gallery-info">
+      <h3>Feira de Ciências</h3>
+      <p>Alunos apresentando experimentos e projetos inovadores.</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/400x250" alt="Projeto 2">
+    <div class="gallery-info">
+      <h3>Dia da Família</h3>
+      <p>Um dia especial de integração entre pais, alunos e professores.</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/400x250" alt="Projeto 3">
+    <div class="gallery-info">
+      <h3>Mostra Cultural</h3>
+      <p>Apresentações artísticas e exposições de trabalhos estudantis.</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/400x250" alt="Projeto 4">
+    <div class="gallery-info">
+      <h3>Projeto Sustentabilidade</h3>
+      <p>Atividades sobre reciclagem e preservação ambiental.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
 </footer>
 
-<script>
-function enviarMensagem(e) {
-  e.preventDefault();
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
-  const mensagem = document.getElementById("mensagem").value;
-
-  // Coloque o número do WhatsApp da escola aqui 👇
-  const numero = "5581999999999"; 
-
-  const texto = `Olá, sou ${nome} (${email}).%0A%0A${mensagem}`;
-  const url = `https://wa.me/${numero}?text=${texto}`;
-  window.open(url, "_blank");
-}
-</script>
 </body>
 </html>
