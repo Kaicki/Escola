@@ -1,12 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0d6efd"/>
-      <stop offset="1" stop-color="#2fbf71"/>
-    </linearGradient>
-  </defs>
-  <rect width="120" height="120" rx="18" fill="url(#g)"/>
-  <g fill="#fff" font-family="Arial, Helvetica, sans-serif">
-    <text x="60" y="65" font-size="36" text-anchor="middle" font-weight="700">MP</text>
-  </g>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="150" cy="150" r="140" fill="white" stroke="none"/>
+  
+  <!-- Texto superior -->
+  <text x="150" y="45" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" font-weight="bold" fill="black">
+    “E. E. MÁRIO PEREIRA PINTO”
+  </text>
+
+  <!-- Texto inferior -->
+  <text x="150" y="280" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" font-weight="bold" fill="black">
+    CAMPO LIMPO PAULISTA
+  </text>
+
+  <!-- Forma oval preta atrás do M -->
+  <ellipse cx="150" cy="150" rx="70" ry="40" fill="black"/>
+
+  <!-- Letra M -->
+  <text x="150" y="170" text-anchor="middle" font-family="Poppins, sans-serif" font-size="120" font-weight="bold" stroke="black" stroke-width="2" fill="white">
+    M
+  </text>
+
+  <!-- Selo Ensino Integral -->
+  <circle cx="200" cy="180" r="25" fill="white"/>
+  <path d="M210 160 A25 25 0 1 1 190 200" fill="none" stroke="#f5b942" stroke-width="6" stroke-linecap="round"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" font-weight="bold" fill="black">
+    ENSINO
+  </text>
+  <text x="200" y="195" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" font-weight="bold" fill="black">
+    INTEGRAL
+  </text>
 </svg>
