@@ -122,7 +122,6 @@ footer {
   <form onsubmit="enviarMensagem(event)">
     <input type="text" id="nomeAluno" placeholder="Nome do aluno" required>
     <input type="text" id="nomePais" placeholder="Nome dos pais/responsáveis" required>
-    <input type="email" id="email" placeholder="Seu e-mail" required>
     <textarea id="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
     <button type="submit">Enviar via WhatsApp</button>
   </form>
@@ -139,7 +138,6 @@ function enviarMensagem(e) {
   // Captura os valores do formulário
   const aluno = document.getElementById('nomeAluno').value;
   const pais = document.getElementById('nomePais').value;
-  const email = document.getElementById('email').value;
   const msg = document.getElementById('mensagem').value;
 
   // Mensagem formatada
