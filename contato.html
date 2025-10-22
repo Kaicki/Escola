@@ -1,58 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contato — Escola Estadual Mário Pereira Pinto</title>
-  <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato - Escola Estadual Mário Pereira Pinto</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7fbff;
+}
+header {
+  background: linear-gradient(90deg, #0077b6, #00b894);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+form {
+  max-width: 400px;
+  margin: auto;
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #00b894;
+}
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Logo Escola" class="logo">
-        <span class="school-name">Escola Estadual Mário Pereira Pinto</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-    </div>
-  </header>
+<header>
+  <h1>Contato</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
 
-  <main class="container contact">
-    <h1>Contato</h1>
-    <p>Use o formulário abaixo para enviar uma mensagem à escola.</p>
+<section>
+  <h2>Fale Conosco</h2>
+  <form onsubmit="enviarMensagem(event)">
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
-    <form id="contactForm">
-      <label>Nome
-        <input type="text" name="name" required>
-      </label>
-      <label>Email
-        <input type="email" name="email" required>
-      </label>
-      <label>Mensagem
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-      <button type="submit" class="btn">Enviar</button>
-      <p id="formStatus" class="muted"></p>
-    </form>
+<footer>
+  <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
+</footer>
 
-    <h2>Endereço</h2>
-    <p>Rua Exemplo, 123 — Cidade — Estado</p>
-    <h2>Telefone</h2>
-    <p>(00) 9xxxx-xxxx</p>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year4"></span> Escola Estadual Mário Pereira Pinto</p>
-    </div>
-  </footer>
-
-  <script src="assets/scripts.js"></script>
+<script>
+function enviarMensagem(e) {
+  e.preventDefault();
+  alert("Mensagem enviada com sucesso!");
+}
+</script>
 </body>
 </html>
