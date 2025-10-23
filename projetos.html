@@ -1,347 +1,141 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projetos - Escola Estadual Mário Pereira Pinto</title>
+<title>3D Card</title>
+
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f4f9ff;
-  color: #222;
-}
-
-/* ==== CABEÇALHO ==== */
-header {
-  background: linear-gradient(90deg, #1f7a3d, #0b1d51);
-  color: #fff;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-header img {
-  width: 90px;
-  height: auto;
-  border-radius: 50%;
-}
-
-header h1 {
-  flex: 1;
-  text-align: center;
-  font-size: 1.4em;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #c7ffd8;
-}
-
-/* ==== SEÇÃO PRINCIPAL ==== */
-section {
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
-}
-
-h2 {
-  color: #0b1d51;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-/* ==== CARDS PADRÃO ==== */
-.card {
-  background: white;
-  border-radius: 12px;
+/* From Uiverse.io by Smit-Prajapati */ 
+.parent {
+  width: 300px;
   padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  perspective: 1000px;
+}
+
+.card {
+  padding-top: 50px;
+  /* border-radius: 10px; */
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+      repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-button {
-  background: #1f7a3d;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #0b1d51;
-}
-
-/* ==== DETALHES DO PROJETO ==== */
-.projeto-detalhes {
-  display: none;
-  background: #e9f6ec;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 15px;
-  animation: aparecer 0.5s ease;
-}
-
-.projeto-detalhes img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-@keyframes aparecer {
-  from {opacity: 0; transform: scale(0.98);}
-  to {opacity: 1; transform: scale(1);}
-}
-
-/* ==== CARD 3D DO UIVERSE ==== */
-.parent {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0;
-}
-
-.card-3d {
-  position: relative;
-  width: 280px;
-  height: 180px;
-  background: linear-gradient(135deg, #0b1d51, #1f7a3d);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s ease;
-  transform-style: preserve-3d;
-}
-
-.card-3d:hover {
-  transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
 }
 
 .content-box {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  text-align: center;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-  transform: translateY(60%);
-  transition: transform 0.4s ease;
+  background: rgba(4, 193, 250, 0.732);
+  /* border-radius: 10px 100px 10px 10px; */
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
 }
 
-.card-3d:hover .content-box {
-  transform: translateY(0);
-}
-
-.card-title {
-  font-weight: 700;
-  font-size: 1.2em;
-  color: #0b1d51;
-  display: block;
-}
-
-.card-content {
-  font-size: 0.9em;
-  color: #333;
-  margin: 10px 0;
-}
-
-.see-more {
+.content-box .card-title {
   display: inline-block;
-  margin-top: 10px;
-  background: #1f7a3d;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  cursor: pointer;
-  transition: 0.3s;
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
 }
 
-.see-more:hover {
-  background: #0b1d51;
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgb(7, 185, 255);
+  /* border-radius: 5px; */
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
 }
 
 .date-box {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
   background: white;
-  color: #0b1d51;
-  padding: 8px 12px;
-  border-radius: 10px;
+  border: 1px solid rgb(7, 185, 255);
+  /* border-radius: 10px; */
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+  display: block;
   text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .date-box .month {
-  display: block;
-  font-size: 0.7em;
-  letter-spacing: 1px;
-  font-weight: bold;
+  color: rgb(4, 193, 250);
+  font-size: 9px;
+  font-weight: 700;
 }
 
 .date-box .date {
-  display: block;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-/* ==== RODAPÉ ==== */
-footer {
-  background: #0b1d51;
-  color: white;
-  text-align: center;
-  padding: 15px;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(4, 193, 250);
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-left">
-    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+<div class="parent">
+  <div class="card">
+      <div class="content-box">
+          <span class="card-title">3D Card</span>
+          <p class="card-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          </p>
+          <span class="see-more">See More</span>
+      </div>
+      <div class="date-box">
+          <span class="month">JUNE</span>
+          <span class="date">29</span>
+      </div>
   </div>
-  <h1>Projetos</h1>
-  <nav>
-    <a href="index.html">Sobre</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="noticias.html">Notícias</a>
-    <a href="galeria.html">Galeria</a>
-    <a href="contato.html">Contato</a>
-  </nav>
-</header>
-
-<section>
-  <h2>Projetos Educacionais e Dias Escolares</h2>
-  <p>Conheça algumas das atividades e projetos realizados pela nossa escola ao longo do ano.</p>
-
-  <div class="cards">
-
-    <!-- Feira de Ciências -->
-    <div class="card">
-      <img src="https://via.placeholder.com/400x200" alt="Feira de Ciências">
-      <h3>Feira de Ciências</h3>
-      <p>Evento anual com experimentos e apresentações criativas dos alunos.</p>
-      <button onclick="mostrarDetalhes(1)">Ver mais</button>
-      <div class="projeto-detalhes" id="detalhe1">
-        <p>Durante a Feira de Ciências, os alunos exploraram temas como energia limpa, reciclagem e robótica educacional.</p>
-        <img src="https://via.placeholder.com/600x350" alt="Feira de Ciências">
-      </div>
-    </div>
-
-    <!-- Leitura em Ação -->
-    <div class="card">
-      <img src="https://via.placeholder.com/400x200" alt="Leitura em Ação">
-      <h3>Leitura em Ação</h3>
-      <p>Projeto de incentivo à leitura e escrita criativa.</p>
-      <button onclick="mostrarDetalhes(2)">Ver mais</button>
-      <div class="projeto-detalhes" id="detalhe2">
-        <p>O projeto “Leitura em Ação” promoveu rodas de leitura, concursos literários e a criação de livros pelos alunos.</p>
-        <img src="https://via.placeholder.com/600x350" alt="Leitura em Ação">
-      </div>
-    </div>
-
-    <!-- ==== CARD 3D 1: Dia da Árvore ==== -->
-    <div class="parent">
-      <div class="card-3d">
-        <div class="content-box">
-          <span class="card-title">Dia da Árvore</span>
-          <p class="card-content">Plantio de mudas e atividades de conscientização ambiental.</p>
-          <span class="see-more">Ver Mais</span>
-        </div>
-        <div class="date-box">
-          <span class="month">SET</span>
-          <span class="date">21</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==== CARD 3D 2: Semana da Pátria ==== -->
-    <div class="parent">
-      <div class="card-3d">
-        <div class="content-box">
-          <span class="card-title">Semana da Pátria</span>
-          <p class="card-content">Apresentações cívicas e atividades culturais sobre o Brasil.</p>
-          <span class="see-more">Ver Mais</span>
-        </div>
-        <div class="date-box">
-          <span class="month">SET</span>
-          <span class="date">07</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==== CARD 3D 3: Dia do Estudante ==== -->
-    <div class="parent">
-      <div class="card-3d">
-        <div class="content-box">
-          <span class="card-title">Dia do Estudante</span>
-          <p class="card-content">Homenagem aos alunos com atividades recreativas e culturais.</p>
-          <span class="see-more">Ver Mais</span>
-        </div>
-        <div class="date-box">
-          <span class="month">AGO</span>
-          <span class="date">11</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
-</footer>
-
-<script>
-function mostrarDetalhes(id) {
-  const detalhe = document.getElementById('detalhe' + id);
-  detalhe.style.display = detalhe.style.display === 'block' ? 'none' : 'block';
-}
-</script>
+</div>
 
 </body>
 </html>
