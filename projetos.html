@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notícias - Escola Estadual Mário Pereira Pinto</title>
+<title>Projetos - Escola Estadual Mário Pereira Pinto</title>
 <style>
 body {
   margin: 0;
@@ -59,7 +59,7 @@ nav a:hover {
   color: #c7ffd8;
 }
 
-/* ==== SEÇÃO DE NOTÍCIAS ==== */
+/* ==== SEÇÃO DE PROJETOS ==== */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -69,35 +69,49 @@ h2 {
   color: #0b1d51;
 }
 
-.news {
-  max-width: 900px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+.projects {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin-top: 40px;
 }
 
-.article {
+.project {
   background: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.article h3 {
+.project img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.project h3 {
   color: #1f7a3d;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
-.article p {
+.project p {
   line-height: 1.6;
+  text-align: center;
 }
 
-.article small {
+.project small {
   color: #555;
   display: block;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 /* ==== BOTÃO LER MAIS ==== */
@@ -110,6 +124,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -131,7 +146,7 @@ footer {
   <div class="header-left">
     <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
   </div>
-  <h1>Notícias</h1>
+  <h1>Projetos</h1>
   <nav>
     <a href="index.html">Sobre</a>
     <a href="projetos.html">Projetos</a>
@@ -142,47 +157,47 @@ footer {
 </header>
 
 <section>
-  <h2>Últimas Notícias</h2>
-  <p>Fique por dentro dos acontecimentos mais recentes da Escola Estadual Mário Pereira Pinto.</p>
+  <h2>Projetos da Escola</h2>
+  <p>Conheça os projetos desenvolvidos pelos alunos da Escola Estadual Mário Pereira Pinto.</p>
 
-  <div class="news">
-    <!-- NOTÍCIA 1 -->
-    <div class="article">
-      <small>20 de Outubro de 2025</small>
-      <h3>Semana da Cidadania</h3>
+  <div class="projects">
+    <!-- PROJETO 1 -->
+    <div class="project">
+      <img src="horta.jpg" alt="Horta Escolar">
+      <small>Outubro de 2025</small>
+      <h3>Horta Escolar Sustentável</h3>
       <p>
-        Durante a Semana da Cidadania, alunos participaram de palestras, apresentações culturais e ações comunitárias voltadas à solidariedade e respeito mútuo.
+        Alunos cultivam uma horta orgânica dentro da escola, aprendendo sobre sustentabilidade e alimentação saudável.
         <span id="more1" style="display:none;">
-          Além disso, foram realizadas campanhas de arrecadação de alimentos, oficinas de conscientização ambiental e apresentações artísticas sobre valores humanos. 
-          A atividade promoveu integração e despertou nos estudantes o senso de responsabilidade social.
+          O projeto também envolve oficinas sobre compostagem e uso consciente da água, incentivando a preservação ambiental.
         </span>
       </p>
       <button onclick="toggleText('more1', this)">Ler mais</button>
     </div>
 
-    <!-- NOTÍCIA 2 -->
-    <div class="article">
-      <small>15 de Outubro de 2025</small>
-      <h3>Feira de Ciências 2025</h3>
+    <!-- PROJETO 2 -->
+    <div class="project">
+      <img src="robotica.jpg" alt="Clube de Robótica">
+      <small>Setembro de 2025</small>
+      <h3>Robótica e Inovação</h3>
       <p>
-        A Feira de Ciências da Escola 3.0 foi um verdadeiro sucesso, reunindo projetos criativos sobre sustentabilidade, energia limpa, biotecnologia e robótica.
+        O clube de robótica desenvolve protótipos e participa de competições regionais de tecnologia.
         <span id="more2" style="display:none;">
-          Os alunos demonstraram grande dedicação e conhecimento, com destaque para o projeto de energia solar do 9º ano. 
-          A professora responsável, Irmã Helena, elogiou o empenho dos estudantes e reforçou a importância de aprender de forma prática e divertida.
+          Os alunos aprendem programação, eletrônica e trabalho em equipe, estimulando o pensamento crítico e a criatividade.
         </span>
       </p>
       <button onclick="toggleText('more2', this)">Ler mais</button>
     </div>
 
-    <!-- NOTÍCIA 3 -->
-    <div class="article">
-      <small>25 de Setembro de 2025</small>
-      <h3>Nova Biblioteca Escolar</h3>
+    <!-- PROJETO 3 -->
+    <div class="project">
+      <img src="leitura.jpg" alt="Projeto Leitura Viva">
+      <small>Agosto de 2025</small>
+      <h3>Leitura Viva</h3>
       <p>
-        Com um novo acervo e ambiente moderno, a biblioteca da escola foi reinaugurada e já está aberta aos alunos e professores.
+        Projeto que incentiva a leitura entre os alunos por meio de atividades lúdicas e encontros literários.
         <span id="more3" style="display:none;">
-          O espaço conta com computadores para pesquisa, áreas de leitura e um sistema digital de empréstimo de livros. 
-          A iniciativa faz parte do projeto "Leitura Viva", que busca incentivar o hábito da leitura entre os jovens.
+          Além disso, promove clubes de leitura e debates sobre livros, ampliando o conhecimento e a expressão dos estudantes.
         </span>
       </p>
       <button onclick="toggleText('more3', this)">Ler mais</button>
@@ -195,7 +210,6 @@ footer {
   <p>KAICKI BERTAGLIA - 3B1</p>
 </footer>
 
-<!-- ==== SCRIPT PARA LER MAIS ==== -->
 <script>
 function toggleText(id, btn) {
   const moreText = document.getElementById(id);
