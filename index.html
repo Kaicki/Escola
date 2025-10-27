@@ -16,7 +16,7 @@ body {
 header {
   background: linear-gradient(90deg, #87CEFF, #00B2EE, #4F94CD, #0000CD);
   color: #fff;
-  padding: 10px 11px 12px 13px 14px 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,9 +32,11 @@ header img {
   height: auto;
   border-radius: 50%;
   transition: transform 0.3s;
+  cursor: pointer; /* Mostra o cursor de clique */
 }
 header img:hover {
   transform: scale(1.05);
+  opacity: 0.9;
 }
 header h1 {
   flex: 1;
@@ -65,7 +67,7 @@ section {
 .hero {
   background: linear-gradient(90deg, #87CEFF, #00B2EE, #4F94CD, #0000CD);
   color: white;
-  padding:  10px 11px 12px 13px 14px 15px;
+  padding: 40px 20px;
   animation: fadeIn 2s ease;
 }
 .hero h1 {
@@ -102,7 +104,7 @@ footer {
   padding: 15px;
 }
 
-/* ===== BOTÃO ===== */
+/* ===== BOTÃO PADRÃO ===== */
 button {
   background: hsla(120, 60%, 70%, 0.3);
   color: white;
@@ -113,7 +115,7 @@ button {
   transition: 0.3s;
 }
 button:hover {
-  background: hsla(120, 60%, 70%, 0.3);
+  background: hsla(120, 60%, 70%, 0.5);
 }
 
 /* ===== ANIMAÇÃO ===== */
@@ -127,7 +129,10 @@ button:hover {
 
 <header>
   <div class="header-left">
-    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+    <!-- O logo agora funciona como um botão "escondido" -->
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" 
+         alt="Logo da Escola"
+         onclick="window.open('https://ajudinha.vercel.app', '_blank')">
   </div>
   <h1>Escola Estadual Mário Pereira Pinto</h1>
   <nav>
@@ -152,7 +157,7 @@ button:hover {
 
 <footer>
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
-   <p>KAICKI BERTAGLIA - 3B1</p>
+  <p>KAICKI BERTAGLIA - 3B1</p>
 </footer>
 
 </body>
