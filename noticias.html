@@ -11,53 +11,64 @@ body {
   background: #f4f9ff;
   color: #222;
 }
+
 /* ==== CABEÇALHO ==== */
 header {
   background: linear-gradient(90deg, #87CEFF, #00B2EE, #4F94CD, #0000CD);
   color: #fff;
-  padding: 10px 11px 12px 13px 14px 15px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .header-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 header img {
   width: 90px;
   height: auto;
   border-radius: 50%;
 }
+
 header h1 {
   flex: 1;
   text-align: center;
   font-size: 1.4em;
   margin: 0;
 }
+
 nav {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
+
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
+
 nav a:hover {
   color: #c7ffd8;
 }
+
+/* ==== SEÇÃO DE NOTÍCIAS ==== */
 section {
   padding: 60px 20px;
   text-align: center;
 }
+
 h2 {
   color: #0b1d51;
 }
+
 .news {
   max-width: 900px;
   margin: auto;
@@ -66,6 +77,7 @@ h2 {
   gap: 25px;
   margin-top: 40px;
 }
+
 .article {
   background: white;
   border-radius: 12px;
@@ -73,17 +85,38 @@ h2 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: left;
 }
+
 .article h3 {
   color: #1f7a3d;
 }
+
 .article p {
   line-height: 1.6;
 }
+
 .article small {
   color: #555;
   display: block;
   margin-bottom: 8px;
 }
+
+/* ==== BOTÃO LER MAIS ==== */
+button {
+  background: #0b1d51;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1f7a3d;
+}
+
+/* ==== RODAPÉ ==== */
 footer {
   background: #0b1d51;
   color: white;
@@ -113,22 +146,46 @@ footer {
   <p>Fique por dentro dos acontecimentos mais recentes da Escola Estadual Mário Pereira Pinto.</p>
 
   <div class="news">
+    <!-- NOTÍCIA 1 -->
     <div class="article">
       <small>20 de Outubro de 2025</small>
       <h3>Semana da Cidadania</h3>
-      <p>Durante a Semana da Cidadania, alunos participaram de palestras, apresentações culturais e ações comunitárias voltadas à solidariedade e respeito mútuo.</p>
+      <p>
+        Durante a Semana da Cidadania, alunos participaram de palestras, apresentações culturais e ações comunitárias voltadas à solidariedade e respeito mútuo.
+        <span id="more1" style="display:none;">
+          Além disso, foram realizadas campanhas de arrecadação de alimentos, oficinas de conscientização ambiental e apresentações artísticas sobre valores humanos. 
+          A atividade promoveu integração e despertou nos estudantes o senso de responsabilidade social.
+        </span>
+      </p>
+      <button onclick="toggleText('more1', this)">Ler mais</button>
     </div>
 
+    <!-- NOTÍCIA 2 -->
     <div class="article">
-      <small>10 de Outubro de 2025</small>
-      <h3>Alunos vencem olimpíada de matemática</h3>
-      <p>Estudantes da nossa escola conquistaram destaque na Olimpíada Brasileira de Matemática, trazendo orgulho para toda a comunidade escolar.</p>
+      <small>15 de Outubro de 2025</small>
+      <h3>Feira de Ciências 2025</h3>
+      <p>
+        A Feira de Ciências da Escola 3.0 foi um verdadeiro sucesso, reunindo projetos criativos sobre sustentabilidade, energia limpa, biotecnologia e robótica.
+        <span id="more2" style="display:none;">
+          Os alunos demonstraram grande dedicação e conhecimento, com destaque para o projeto de energia solar do 9º ano. 
+          A professora responsável, Irmã Helena, elogiou o empenho dos estudantes e reforçou a importância de aprender de forma prática e divertida.
+        </span>
+      </p>
+      <button onclick="toggleText('more2', this)">Ler mais</button>
     </div>
 
+    <!-- NOTÍCIA 3 -->
     <div class="article">
       <small>25 de Setembro de 2025</small>
-      <h3>Nova biblioteca escolar</h3>
-      <p>Com um novo acervo e ambiente moderno, a biblioteca da escola foi reinaugurada e já está aberta aos alunos e professores.</p>
+      <h3>Nova Biblioteca Escolar</h3>
+      <p>
+        Com um novo acervo e ambiente moderno, a biblioteca da escola foi reinaugurada e já está aberta aos alunos e professores.
+        <span id="more3" style="display:none;">
+          O espaço conta com computadores para pesquisa, áreas de leitura e um sistema digital de empréstimo de livros. 
+          A iniciativa faz parte do projeto "Leitura Viva", que busca incentivar o hábito da leitura entre os jovens.
+        </span>
+      </p>
+      <button onclick="toggleText('more3', this)">Ler mais</button>
     </div>
   </div>
 </section>
@@ -137,6 +194,20 @@ footer {
   <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
   <p>KAICKI BERTAGLIA - 3B1</p>
 </footer>
+
+<!-- ==== SCRIPT PARA LER MAIS ==== -->
+<script>
+function toggleText(id, btn) {
+  const moreText = document.getElementById(id);
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    btn.innerText = "Ler menos";
+  } else {
+    moreText.style.display = "none";
+    btn.innerText = "Ler mais";
+  }
+}
+</script>
 
 </body>
 </html>
