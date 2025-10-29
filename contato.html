@@ -15,7 +15,7 @@ body {
 header {
   background: linear-gradient(90deg, #87CEFF, #00B2EE, #4F94CD, #0000CD);
   color: #fff;
-  padding: 10px 11px 12px 13px 14px 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,7 +117,7 @@ footer {
 
 <section>
   <h2>Fale Conosco</h2>
-  <p>Por favor, preencha o formulário abaixo com o **nome do aluno** e **nome dos pais ou responsáveis**.</p>
+  <p>Por favor, preencha o formulário abaixo com o <b>nome do aluno</b> e <b>nome dos pais ou responsáveis</b>.</p>
 
   <form onsubmit="enviarMensagem(event)">
     <input type="text" id="nomeAluno" placeholder="Nome do aluno" required>
@@ -136,18 +136,15 @@ footer {
 function enviarMensagem(e) {
   e.preventDefault();
 
-  // Captura os valores do formulário
   const aluno = document.getElementById('nomeAluno').value;
   const pais = document.getElementById('nomePais').value;
   const msg = document.getElementById('mensagem').value;
 
-  // Mensagem formatada
-  const mensagem = `Olá, meu nome é ${pais}. Estou entrando em contato sobre o aluno(a) ${aluno}. Mensagem: ${msg}
+  // ✅ Mensagem corrigida
+  const mensagem = `Olá, meu nome é ${pais}. Estou entrando em contato sobre o aluno(a) ${aluno}. Mensagem: ${msg}`;
 
-  // Número de WhatsApp da escola (exemplo: 55 + código + número)
   const numeroEscola = "5511911104568";
 
-  // Redireciona para WhatsApp
   window.open(`https://wa.me/${numeroEscola}?text=${encodeURIComponent(mensagem)}`, '_blank');
 }
 </script>
