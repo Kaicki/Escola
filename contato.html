@@ -117,13 +117,13 @@ footer {
 
 <section>
   <h2>Fale Conosco</h2>
-  <p>Por favor, preencha o formulário abaixo com o <b>nome do aluno</b> e <b>nome dos pais ou responsáveis</b>.</p>
+  <p>Preencha o formulário para enviar um e-mail diretamente para a escola.</p>
 
-  <form onsubmit="enviarMensagem(event)">
+  <form onsubmit="enviarEmail(event)">
     <input type="text" id="nomeAluno" placeholder="Nome do aluno" required>
     <input type="text" id="nomePais" placeholder="Nome dos pais/responsáveis" required>
     <textarea id="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
-    <button type="submit">Enviar via WhatsApp</button>
+    <button type="submit">Enviar por E-mail</button>
   </form>
 </section>
 
@@ -133,19 +133,19 @@ footer {
 </footer>
 
 <script>
-function enviarMensagem(e) {
+function enviarEmail(e) {
   e.preventDefault();
 
   const aluno = document.getElementById('nomeAluno').value;
   const pais = document.getElementById('nomePais').value;
   const msg = document.getElementById('mensagem').value;
 
-  // ✅ Mensagem corrigida
-  const mensagem = `Olá, meu nome é ${pais}. Estou entrando em contato sobre o aluno(a) ${aluno}. Mensagem: ${msg}`;
+  const emailEscola = "escola@exemplo.com"; // <-- TROQUE AQUI PARA O E-MAIL REAL DA ESCOLA
 
-  const numeroEscola = "5511911104568";
+  const assunto = `Contato referente ao aluno(a): ${aluno}`;
+  const corpo = `Olá, meu nome é ${pais}.\nEstou entrando em contato referente ao aluno(a) ${aluno}.\n\nMensagem:\n${msg}`;
 
-  window.open(`https://wa.me/${numeroEscola}?text=${encodeURIComponent(mensagem)}`, '_blank');
+  window.location.href = `mailto:${emailEscola}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 }
 </script>
 
