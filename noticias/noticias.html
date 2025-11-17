@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notícias - Escola Estadual Mário Pereira Pinto</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f9ff;
+  color: #222;
+}
+
+/* ==== CABEÇALHO ==== */
+header {
+  background: linear-gradient(90deg, #87CEFF, #00B2EE, #4F94CD, #0000CD);
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  width: 90px;
+  height: auto;
+  border-radius: 50%;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #c7ffd8;
+}
+
+/* ==== SEÇÃO DE NOTÍCIAS ==== */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #0b1d51;
+}
+
+.news {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.article {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.article h3 {
+  color: #1f7a3d;
+}
+
+.article p {
+  line-height: 1.6;
+}
+
+.article small {
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ==== BOTÃO LER MAIS ==== */
+button {
+  background: #0b1d51;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1f7a3d;
+}
+
+/* ==== RODAPÉ ==== */
+footer {
+  background: #0b1d51;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="file_00000000cda0620e931c44935fd6fb30.png" alt="Logo da Escola">
+  </div>
+  <h1>Notícias</h1>
+  <nav>
+    <a href="index.html">Sobre</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="noticias.html">Notícias</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Últimas Notícias</h2>
+  <p>Fique por dentro dos acontecimentos mais recentes da Escola Estadual Mário Pereira Pinto.</p>
+
+  <div class="news">
+    <!-- NOTÍCIA 1 -->
+    <div class="article">
+      <small>20 de Outubro de 2025</small>
+      <h3>Semana da Cidadania</h3>
+      <p>
+        Durante a Semana da Cidadania, alunos participaram de palestras, apresentações culturais e ações comunitárias voltadas à solidariedade e respeito mútuo.
+        <span id="more1" style="display:none;">
+          Além disso, foram realizadas campanhas de arrecadação de alimentos, oficinas de conscientização ambiental e apresentações artísticas sobre valores humanos. 
+          A atividade promoveu integração e despertou nos estudantes o senso de responsabilidade social.
+        </span>
+      </p>
+      <button onclick="toggleText('more1', this)">Ler mais</button>
+    </div>
+
+    <!-- NOTÍCIA 2 -->
+    <div class="article">
+      <small>15 de Outubro de 2025</small>
+      <h3>Feira de Ciências 2025</h3>
+      <p>
+        A Feira de Ciências da Escola 3.0 foi um verdadeiro sucesso, reunindo projetos criativos sobre sustentabilidade, energia limpa, biotecnologia e robótica.
+        <span id="more2" style="display:none;">
+          Os alunos demonstraram grande dedicação e conhecimento, com destaque para o projeto de energia solar do 9º ano. 
+          A professora responsável, Irmã Helena, elogiou o empenho dos estudantes e reforçou a importância de aprender de forma prática e divertida.
+        </span>
+      </p>
+      <button onclick="toggleText('more2', this)">Ler mais</button>
+    </div>
+
+    <!-- NOTÍCIA 3 -->
+    <div class="article">
+      <small>25 de Setembro de 2025</small>
+      <h3>Nova Biblioteca Escolar</h3>
+      <p>
+        Com um novo acervo e ambiente moderno, a biblioteca da escola foi reinaugurada e já está aberta aos alunos e professores.
+        <span id="more3" style="display:none;">
+          O espaço conta com computadores para pesquisa, áreas de leitura e um sistema digital de empréstimo de livros. 
+          A iniciativa faz parte do projeto "Leitura Viva", que busca incentivar o hábito da leitura entre os jovens.
+        </span>
+      </p>
+      <button onclick="toggleText('more3', this)">Ler mais</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Escola Estadual Mário Pereira Pinto</p>
+  <p>KAICKI BERTAGLIA - 3B1</p>
+</footer>
+
+<!-- ==== SCRIPT PARA LER MAIS ==== -->
+<script>
+function toggleText(id, btn) {
+  const moreText = document.getElementById(id);
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    btn.innerText = "Ler menos";
+  } else {
+    moreText.style.display = "none";
+    btn.innerText = "Ler mais";
+  }
+}
+</script>
+
+</body>
+</html>
+<!-- ____  _____ ____ _____ ____  _____ _     _  ____   
+    /  __\/  __//  __Y__ __Y  _ \/  __// \   / \/  _ \  
+    | | //|  \  |  \/| / \ | / \|| |  _| |   | || / \|  
+    | |_\\|  /_ |    / | | | |-||| |_//| |_/\| || |-||  
+    \____/\____\\_/\_\ \_/ \_/ \|\____\\____/\_/\_/ \| -->
+
+                                                    
