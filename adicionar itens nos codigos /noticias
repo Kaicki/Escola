@@ -1,0 +1,11 @@
+  <div class="article">
+      <small>data da noticia</small>
+      <h3>seu titulo aqui</h3>
+      <p>
+        asunto sobre o texto
+        <span id="more1" style="display:none;">
+        aprofundamento sobre o assunto
+        </span>
+      </p>
+      <button onclick="toggleText('more1', this)">Ler mais</button>
+    </div>
