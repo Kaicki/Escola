@@ -1,0 +1,6 @@
+ <div class="gallery-item" onclick="abrirLightbox(this)">
+    <img src="codigo da foto ou link" alt="descriçao da foto">
+    <div class="gallery-info">
+      <h3>Descriçao da foto</h3>
+      <p>aprofundamenti da sobre a foto</p>
+    </div>
