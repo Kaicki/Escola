@@ -1,0 +1,12 @@
+<div class="project">
+      <img src="foto" alt="descriçao da foto">
+      <small>data do projeto</small>
+      <h3>titulo projeto</h3>
+      <p>
+       descriçao
+        <span id="more1" style="display:none;">
+         descriçao maior
+        </span>
+      </p>
+      <button onclick="toggleText('more1', this)">Ler mais</button>
+    </div>
